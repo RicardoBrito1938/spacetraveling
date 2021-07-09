@@ -46,7 +46,6 @@ function FormatPosts(posts: PostPagination): Post[] {
           locale: ptBR,
         }
       ),
-      // 097 jul 2021
       data: {
         title: post.data.title as string,
         subtitle: post.data.subtitle as string,

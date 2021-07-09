@@ -20,7 +20,7 @@ import styles from './post.module.scss';
 
 interface Post {
   first_publication_date: string | null;
-  last_publication_date: string | null;
+  last_publication_date?: string | null;
   data: {
     title: string;
     next_post?: {
@@ -46,7 +46,7 @@ interface Post {
 
 interface PostProps {
   post: Post;
-  preview: boolean;
+  preview?: boolean;
 }
 
 export default function Post({ post, preview }: PostProps): JSX.Element {
@@ -77,7 +77,7 @@ export default function Post({ post, preview }: PostProps): JSX.Element {
     return acc + result;
   }, 0);
 
-  const postWithDateFormatedAndReadingTime = {
+  const postWithDateFormattedAndReadingTime = {
     ...post,
     first_publication_date: format(
       new Date(post.first_publication_date),
@@ -100,7 +100,7 @@ export default function Post({ post, preview }: PostProps): JSX.Element {
   };
 
   const { data, first_publication_date, last_publication_date } =
-    postWithDateFormatedAndReadingTime;
+    postWithDateFormattedAndReadingTime;
   const {
     author,
     banner,
